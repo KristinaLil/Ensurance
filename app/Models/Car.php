@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    public function owner() {
+        return $this->belongsTo(Owner::class);
+    }
+
 }

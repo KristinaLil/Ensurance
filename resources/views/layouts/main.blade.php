@@ -11,8 +11,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Cars</div>
-                    <div class="body">
                         @yield('content')
                     </div>
                 </div>

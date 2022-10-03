@@ -15,22 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth')->group(function () {
+    Route::resource('cars', CarController::class);
+    Route::resource('owners', OwnerController::class);
 
-Route::get('/cars', [CarController::class,'showCars']);
-Route::get('/cars/add', [CarController::class,'showCars'])->name('cars');
+});
 
+Auth::routes();
 
-// {} - bet kokie kintamieji, turi būti paskutiniai
-//Route::get('/cars/{name}', [CarController::class,'showCars']);
-
-Route::resource('cars',CarController::class);
-
-Route::get('/owners', [OwnerController::class,'showOwners']);
-Route::get('/owners/add', [OwnerController::class,'showOwners'])->name('owners');
-
-
-// {} - bet kokie kintamieji, turi būti paskutiniai
-//Route::get('/cars/{name}', [CarController::class,'showCars']);
-
-Route::resource('owners',OwnerController::class);
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

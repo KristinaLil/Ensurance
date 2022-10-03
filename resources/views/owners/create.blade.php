@@ -1,6 +1,8 @@
 
 @extends('layouts.main')
 @section('content')
+    <div class="card-header">Owners</div>
+    <div class="body">
 
 <form action="{{route('owners.store')}}" method="post" class="form-control">
     @csrf
